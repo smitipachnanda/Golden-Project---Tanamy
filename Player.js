@@ -11,8 +11,8 @@ this.score = 0
 getCount(){
 
 var getPlayerCount = database.ref('playerCount')
-getPlayerCount.on("value",function(data){
-playerCount = data.val
+getPlayerCount.on("value",(data)=>{
+playerCount = data.val()
 
 })
 }
@@ -28,16 +28,7 @@ playerCount : count
 }
 update(){
 
-//var playerIndex = "players/player"+this.index
-//database.ref(playerIndex).set({
-
-  //name:this.name,
-  //score:this.score,
-  //d//istance:this.distance
-
-//})
-//}
-var playerIndex = "players/player"+this.index
+var playerIndex = "players/player" + this.index
 database.ref(playerIndex).set({
     name:this.name,
     distance:this.distance,
